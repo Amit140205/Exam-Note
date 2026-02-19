@@ -13,10 +13,11 @@ import { stripeWebHook } from "./controllers/credits.controller.js"
 dotenv.config()
 
 const app=express()
+app.set("trust proxy", 1);
 const port=process.env.PORT || 8000
 
 app.use(cors({
-    origin:process.env.CLIENT_URL,
+    origin:"https://exam-note-client.onrender.com",
     credentials:true,
     methods:["GET", "POST", "PUT", "DELETE", "OPTIONS"] 
 }))
