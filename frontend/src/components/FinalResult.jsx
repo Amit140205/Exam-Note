@@ -121,7 +121,7 @@ function FinalResult({result}) {
         {/* charts */}
         {result?.charts?.length>0 && 
         <section>
-            <SectionHeader icon="📈" title="Visual CHarts" color="indigo"/>
+            <SectionHeader icon="📈" title="Visual Charts" color="indigo"/>
             <ReChartSetup charts={result?.charts}/>
 
             <p className='mt-3 text-xs text-gray-500 italic'>
@@ -156,7 +156,7 @@ function FinalResult({result}) {
                     ))}
                 </ul>
 
-                <p className='font-medium mt-4 ml-6'>Diagram Questions</p>
+                {result?.questions?.diagram && <p className='font-medium mt-4 ml-6'>Diagram Questions</p>}
                 <ul className='list-disc ml-12 text-gray-700'>
                     <li>{result?.questions?.diagram}</li>
                 </ul>
