@@ -7,7 +7,7 @@ export const getAllNotes=async (req, res)=>{
         const notes=await NotesModel.find({user: userId}).select("topic classLevel examType revisionMode includeDiagram includeChart createdAt").sort({createdAt:-1})
 
         if(!notes){
-            return res.state(404).json({
+            return res.status(404).json({
                 error:"Notes not found"
             })
         }
@@ -27,7 +27,7 @@ export const getSingleNote=async (req, res)=>{
         })
 
         if(!note){
-            return res.state(404).json({
+            return res.status(404).json({
                 error:"Note not found"
             })
         }
